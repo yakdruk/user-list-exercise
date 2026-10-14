@@ -34,31 +34,23 @@ returns one user). The list starts with one user.
 
 Code: `src/UserList.tsx`, `src/api.ts`. Tests: `tests/`.
 
-## Bug report (from QA)
+## Part 1 - Find the bug + root cause (about 5 min)
 
-> Title: Add User sometimes adds only one user
->
-> Steps: open the app, click Add User twice quickly.
-> Expected: 2 new users in the list.
-> Actual: sometimes only 1 new user appears. Not reproducible every time - slow network makes
-> it happen more often.
-
-## Part 1 - Root cause (about 5 min)
-
-Point to the line that causes the bug and explain *why* it happens. "Sometimes" is part of the
-question: explain why it is intermittent.
+QA reported a bug in this app. Before we share their report, take about 3 minutes to find it
+yourself - run the app, read the code, whatever you prefer. Then point to the line that causes
+it and explain *why* it happens.
 
 ## Part 2 - Fix + regression test (about 15 min)
 
 1. Fix the bug with the smallest change you can justify.
 2. Write a Playwright test in `tests/` that **fails on the original code and passes on your
-   fix** - every time, not sometimes.
+   fix** - on every run.
 3. Be ready to show us that it fails without your fix.
 
 ## Part 3 - Review an AI-generated PR (about 15 min)
 
-After Part 2 we will send you a fix and a test an AI assistant produced for the same bug
-report. Review it as if it were a teammate's PR:
+After Part 2 we will send you a fix and a test an AI assistant produced for the same bug.
+Review it as if it were a teammate's PR:
 
 - What would you keep, what would you delete, and why?
 - Does the test actually protect against this bug?
